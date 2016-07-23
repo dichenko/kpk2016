@@ -42,6 +42,18 @@ def to_point(x,y):
 
 init_drawman()
 
+
+def axes():
+    to_point(0,0)
+    pen_down()
+    to_point(-200,0)
+    to_point(200,0)
+    to_point(0,0)
+    to_point(0,200)
+    to_point(0,-200)
+    to_point(0,0)
+    pen_up()
+
 if __name__ == '__main__':
 
     test_drawman()
