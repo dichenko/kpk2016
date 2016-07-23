@@ -1,5 +1,6 @@
 from turtle import Turtle
 
+
 def init_drawman():
     global t, x_current, y_current
     t = Turtle()
@@ -17,12 +18,12 @@ def test_drawman():
     on_vector(0,100)
     pen_up()
 
-
-
 def pen_down():
+    global t
     t.pendown()
 
 def pen_up():
+    global t
     t.penup()
 
 def on_vector(dx, dy):
@@ -39,6 +40,8 @@ def to_point(x,y):
     y_current= y
     t.goto(x,y)
 
+init_drawman()
+
 if __name__ == '__main__':
-    init_drawman()
+
     test_drawman()
