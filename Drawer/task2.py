@@ -1,9 +1,11 @@
 from drawer import *
+from math import sin
+from time import sleep
 
 def f(x):
-    return x*x*0.1
-x_start = -50
-x_finish = 50
+    return 90*sin(x*0.09)
+x_start = -150
+x_finish = 150
 
 
 axes()
@@ -12,6 +14,8 @@ pen_down()
 
 for x in range(x_start,x_finish+1):
     to_point(x, f(x))
+
+sleep(10)
 
 
 
