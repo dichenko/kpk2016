@@ -1,4 +1,5 @@
 from drawer import *
+
 def f(x):
     return x*x*0.1
 x_start = -50
