@@ -23,4 +23,6 @@ button2.pack()
 
 
 
+button1['text'] = 'Я текст'
+
 root.mainloop()
