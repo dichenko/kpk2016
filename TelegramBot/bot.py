@@ -5,7 +5,7 @@ import telebot
 def listener(messages):
     print(messages)
     #messages = int(messages)
-    bot.send_message(m.chat.id, m.text)
+    bot.send_message(messages.chat.id, messages.text)
 
 if __name__ == '__main__':
      bot = telebot.TeleBot(config.token)
