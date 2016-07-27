@@ -19,20 +19,19 @@ def init_main_window():
     #button1.bind("<Button>", fu)  #<Button-1> левая кнопка мыши, 3-правая
 
 
-    #Способ 2 - забиндить кнопку. Срабатывает на нажатие (а не на отпускание) кнопки мыши
-    #и не нажимается пробелом
+    # Способ 2 - забиндить кнопку. Срабатывает на нажатие
+    # (а не на отпускание) кнопки мыши
+    # и не нажимается пробелом
     button2 = t.Button(root, text = "Йя попко")
     button2.bind("<Button>", fu)  #<Button> любой кнопкой мыши
     variable = t.IntVar()
-    label = t.Label(root, text = 'Тут лейбл')
-    ruler = t.Scale(root)
-    text = t.Entry(root)
+    label = t.Label(root, textvariable = variable)
+    ruler = t.Scale(root, orient=t.HORIZONTAL, from_=0, to=255, resolution=10, variable=variable)
+    text = t.Entry(root, textvariable = variable)
     for obj in button1, button2, label, text, ruler:
         obj.pack()
 
 
 if __name__ == "__main__":
-    global root
-
     init_main_window()
     root.mainloop()
