@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/PycharmProjects/KMB_Ivan_Bibiliv/.idea/KMB_Ivan_Bibiliv.iml" filepath="$USER_HOME$/PycharmProjects/KMB_Ivan_Bibiliv/.idea/KMB_Ivan_Bibiliv.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/kpk2016.iml" filepath="$PROJECT_DIR$/.idea/kpk2016.iml" />
     </modules>
   </component>
