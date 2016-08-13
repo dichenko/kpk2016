@@ -1,12 +1,21 @@
 import tkinter
 
-def paint(event):
-    """ Обработчик событий для холста
-    :param event: событие
+def click_ball(event):
+    """ Обработчик событий для игрового холста
+    :param event: событие с координатами клика
     :return: ничего
     """
-    print(event.x, event.y)
+
     canvas.coords(line, 0,0,event.x, event.y)
+
+def create_random_ball():
+    """
+
+    :return:
+    """
+    pass
+    canvas.create_oval(x, y, x+2*r, y+2*r, fill=random_color, width='0')
+
 
 root = tkinter.Tk()
 canvas = tkinter.Canvas(root, background='yellow', width=400, height=400)
@@ -16,7 +25,7 @@ canvas.pack()
 for i in range(10):
     canvas.create_oval(i*40, i*40, i*40+30, i*40+30, fill='green', width='0')
 
-line = canvas.create_line(0,0,10,100)
+
 
 
 
