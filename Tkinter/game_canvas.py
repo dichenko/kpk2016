@@ -2,10 +2,10 @@ import tkinter
 import random
 
 
-ball_initial_number = 10
+ball_initial_number = 90
 ball_minimum_radius = 15
-ball_maximum_radius = 40
-ball_available_colors = ["green","blue","red"]
+ball_maximum_radius = 50
+ball_available_colors = ["green","blue","red", '#ff00ff', 'black']
 
 
 def click_ball():
@@ -24,9 +24,9 @@ def create_random_ball():
     :return:
     """
     r = random.randint(ball_minimum_radius,ball_maximum_radius)
-    x = random.randint(0+r, int(canvas['width'])-1-r)
-    y = random.randint(0+r, int(canvas['height'])-1-r)
-    canvas.create_oval(x, y, x+2*r, y+2*r, fill=random_color(), width='0')
+    x = random.randint(0+r, int(canvas['width'])-1-2*r)
+    y = random.randint(0+r, int(canvas['height'])-1-2*r)
+    canvas.create_oval(x, y, x+2*r, y+2*r, fill=random_color(), width='1')
 
 def random_color():
     """
