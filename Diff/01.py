@@ -40,9 +40,16 @@ def avtomat_run(a):
 
 
 
+def main_proc(r):
+    flag = True
+    for i in range(1,10000):
+        if avtomat_run(upto_4_numbers(i)) == r:
+            flag = not flag
+            break
+    if flag: return 0
+    else: return i
 
-for i in range(1,10000):
-    if avtomat_run(upto_4_numbers(i)) == 1311:
-        print(i)
-        break
 
+
+
+print(main_proc(int(input())))
