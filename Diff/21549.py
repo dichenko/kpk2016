@@ -36,8 +36,7 @@ def find_all_triangles(star_cords, N):
 
 
 
-#принимаем координаты и упаковываем в список
-for i in range(n):
+#принимаем координаты и упаковываем в список списков
     a,b = map(int, input().split())
     star_cords.append([a,b])
 
