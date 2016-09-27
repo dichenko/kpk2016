@@ -23,25 +23,21 @@ n = int(input())
 D = [1]
 data = D[0]
 counter = 1
-while len(D) <= n:
+while len(D) < n:
     counter += 1
     if is_chet(counter):
         for i in range(counter):
             k = next_chet(data)
             D.append(k)
             data = k
-            if len(D) <= n:
-                D.append('break')
-                break
+            if len(D) >= n: break
     else:
         for i in range(counter):
             k = next_nechet(data)
             D.append(k)
             data = k
-            if len(D) <= n:
-                D.append('break')
-                break
+            if len(D) >= n: break
 
-print(D)
+print(D[-1])
 
 
