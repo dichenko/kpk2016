@@ -44,7 +44,18 @@ for i in range(n):
 for i in range(len(star_cords)):
     find_all_triangles(star_cords, i)
 
-print(len(triangle_list))
+
+uniq_triangle_list = []
+
+#print(len(triangle_list))
+triangle_list.sort()
+
+for i in range(len(triangle_list)):
+    if triangle_list[i] not in uniq_triangle_list:
+        uniq_triangle_list.append(triangle_list[i])
+
+print(len(uniq_triangle_list))
+
 
 
 
