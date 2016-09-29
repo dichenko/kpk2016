@@ -1,5 +1,5 @@
 """http://informatics.mccme.ru/mod/statements/view3.php?id=21367&chapterid=112811#1"""
-global_counter = 0
+
 
 def vichet(mas):
     """
@@ -31,23 +31,66 @@ def in_process(mas):
     return flag
 
 
+def find_piece(mas):
+    """
+    Находит в списке первую ненулевую последовательность
+    возвращает срез
+    индекс начала среза
+    индекс конца среза
+    :param mas:
+    :return: srez, i_start, i_finish
+    """
 
+    i_start = 0
+    i_finish = len(mas) - 1
+
+    srez = []
+    was_find = False
+    if mas[0] == 0:
+        posled = False
+        lenght = 0
+    else:
+        posled = True
+        lenght = 1
+
+    for i in range(1, len(mas) - 1):
+        if mas[i] != 0 and mas[i + 1] != 0 and posled is False:
+            posled = True
+            i_start = i
+            lenght += 1
+        elif mas[i] != 0 and mas[i + 1] != 0 and posled is True:
+            i_finish = i + 1
+            lenght += 1
+        elif mas[i] != 0 and mas[i + 1] == 0 and posled is True:
+            i_finish = i
+            lenght  +=1
+            posled = False
+            was_find = True
+        if lenght > 0 and was_find:
+            break
+    else:
+        posled = True
+        lenght = 1
+    return mas[i_start:i_finish+1], i_start, i_finish+1
+
+
+    #print('i_start =', i_start, "i_fin =", i_finish)
+    #print(mas[i_start], ':', mas[i_finish])
+
+global_counter = 0
 n = int(input())
 mas = []
 for i in range(n):
     mas.append(int(input()))
-print(mas)
+
+while in_process(mas):
+    q, start, finish = find_piece(mas)
+    q = vichet(q)
+    mas[start:finish] = q
+
+print(global_counter)
 
 
-x = min(mas)
-print(x)
-counter = (n-1) * x
-
-for i in range(n):
-    mas[i] = mas[i] - x
-
-print(mas)
-print('counter =', x)
 
 
 
