@@ -77,6 +77,7 @@ def find_piece(mas):
     #print('i_start =', i_start, "i_fin =", i_finish)
     #print(mas[i_start], ':', mas[i_finish])
 
+
 global_counter = 0
 n = int(input())
 mas = []
