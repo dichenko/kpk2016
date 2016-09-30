@@ -56,7 +56,10 @@ def find_piece(mas):
         lenght = 0 #Сбрасываем счетчик длины на ноль
         for i in range(1, len(mas) - 1): #Проходим циклом по всей длине ммассива (со 2го элемента)
             if mas[i] != 0 and mas[i + 1] != 0 and posled is False:
-
+#FIXME!!!
+        # FIXME!!!
+        # FIXME!!!
+        # FIXME!!!
 
     else:
         posled = True #Если на первом месте не ноль, то начинаем считать длину последовательности
