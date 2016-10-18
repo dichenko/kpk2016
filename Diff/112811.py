@@ -8,7 +8,6 @@ def vichet(mas):
     :param mas:
     :return: измененный mas
     """
-    #print("vichet")
     global global_counter
     min_el = min(mas)
     for i in range(len(mas)):
@@ -24,7 +23,6 @@ def in_process(mas):
     :param mas: массив с ненулевыми элементами
     :return: возвращает True если с массивом можно дальше работать
     """
-    #print("in proc")
     flag = False
     for i in range(1,len(mas)):
         if mas[i] != 0 and mas[i-1] != 0:
@@ -34,7 +32,6 @@ def in_process(mas):
 
 
 def find_piece(mas):
-
     """
     Находит в списке первую ненулевую последовательность
     возвращает срез
@@ -43,29 +40,20 @@ def find_piece(mas):
     :param mas:
     :return: srez, i_start, i_finish
     """
-    #print("find piece")
 
     i_start = 0
     i_finish = len(mas) - 1
 
     srez = []
     was_find = False
-
-    if mas[0] == 0: #если первым стоит ноль
-        posled = False #считаем что последовательность не идет
-        lenght = 0 #Сбрасываем счетчик длины на ноль
-        for i in range(1, len(mas) - 1): #Проходим циклом по всей длине ммассива (со 2го элемента)
-            if mas[i] != 0 and mas[i + 1] != 0 and posled is False:
-#FIXME!!!
-        # FIXME!!!
-        # FIXME!!!
-        # FIXME!!!
-
+    if mas[0] == 0:
+        posled = False
+        lenght = 0
     else:
-        posled = True #Если на первом месте не ноль, то начинаем считать длину последовательности
-        lenght = 1  #И длина уже равна единице
+        posled = True
+        lenght = 1
 
-    for i in range(1, len(mas) - 1):  #Проходим циклом по всей длине ммассива (со 2го элемента)
+    for i in range(1, len(mas) - 1):
         if mas[i] != 0 and mas[i + 1] != 0 and posled is False:
             posled = True
             i_start = i
@@ -73,21 +61,21 @@ def find_piece(mas):
         elif mas[i] != 0 and mas[i + 1] != 0 and posled is True:
             i_finish = i + 1
             lenght += 1
-        elif mas[i] == 0 and posled is True:
+        elif mas[i] != 0 and mas[i + 1] == 0 and posled is True:
             i_finish = i
             lenght  +=1
             posled = False
             was_find = True
         if lenght > 0 and was_find:
             break
-
-    print(mas[i_start:i_finish+1])
+    else:
+        posled = True
+        lenght = 1
     return mas[i_start:i_finish+1], i_start, i_finish+1
 
 
     #print('i_start =', i_start, "i_fin =", i_finish)
     #print(mas[i_start], ':', mas[i_finish])
-
 
 global_counter = 0
 n = int(input())
@@ -99,12 +87,11 @@ while in_process(mas):
     q, start, finish = find_piece(mas)
     q = vichet(q)
     mas[start:finish] = q
-    print(mas)
 
 print(global_counter)
 
 
-
-
+mas = [0,3,5,7,0,5,3, 9]
+print(find_piece(mas))
 
 
