@@ -1,23 +1,46 @@
-
+def is_2zn(x):
+    flag = True
+    for i in range(2, len(x)):
+        if x[i] != 0:
+            if x[i] < 10 or x[i] > 99:
+                flag = False
+                break
+    return flag
 
 def foo(w):
     k = 1
-    a = [0]*100000000
+    a = [0]*15
     a[k] = 1
     while w != 85:
-        print('big cycle start')
+
         s = 0
         while w != 0:
             c = w % 10
-            s = s + c * c
-            w = w // 10
-            print ('small cycle', c,s,w)
+            s += c * c
+            w //= 10
         w = s
         k += 1
         a[k] = w
-        print('big cycle finish')
-    return k
 
+    return k, a
+mas_mas = []
+mas_i = []
+for i in range(9000001,111000001):
+    try:
+        k,a = foo(i)
+        if  k == 5 and is_2zn(a):
+            mas_mas.append(a[2:])
+            mas_i.append(i)
+    except:
+        pass
 
-print(foo(17))
+for i in range(len(mas_i)):
+    print (mas_i[i], mas_mas[i])
+
+summa = 0
+for el in mas_i:
+    summa += el;
+
+print(summa)
+
 
