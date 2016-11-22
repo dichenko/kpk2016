@@ -25,7 +25,7 @@ def foo(w):
     return k, a
 mas_mas = []
 mas_i = []
-for i in range(9000001,111000001):
+for i in range(20):
     try:
         k,a = foo(i)
         if  k == 5 and is_2zn(a):
