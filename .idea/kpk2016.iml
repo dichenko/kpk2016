@@ -5,6 +5,7 @@
     <orderEntry type="jdk" jdkName="Python 3.5.2 (C:\Users\mdichenko\AppData\Local\Programs\Python\Python35-32\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="GoToHack_II" />
+    <orderEntry type="module" module-name="stepic_python" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
